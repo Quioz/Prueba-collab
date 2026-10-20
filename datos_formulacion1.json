@@ -1,0 +1,11 @@
+{
+  "descripcion": "Canal tipo hipotetico para la Formulacion I (Milne-Thomson, 10.8)",
+  "h": 4.0,
+  "h1": 4.0,
+  "h2": 2.0,
+  "alpha_deg": 60.0,
+  "U": 1.0,
+  "y": 1.5,
+  "g": 9.81,
+  "phi_objetivo": 0.3
+}

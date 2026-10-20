@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[10], line 20
+     18 yc = ymax - (np.arange(nfil) + 0.5)*DX_RASTER           # fila 0 = norte
+     19 XC, YC = np.meshgrid(xc, yc)
+---> 20 tr_local = from_origin(xmin, ymax, DX_RASTER, DX_RASTER)
+     21 mascara_mojada = rasterize([(mojado, 1)], out_shape=(nfil, ncol), transform=tr_local, fill=0, dtype="uint8").astype(bool)
+     22 Z = np.where(mascara_mojada, z_fondo(XC, YC), Z_BANCO).astype("float32")
+
+File C:\Python 3.10\lib\site-packages\rasterio\transform.py:178, in from_origin(west, north, xsize, ysize)
+    170 def from_origin(west, north, xsize, ysize):
+    171     """Return an Affine transformation given upper left and pixel sizes.
+    172 
+    173     Return an Affine transformation for a georeferenced raster given
+   (...)
+    176 
+    177     """
+--> 178     return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+
+File C:\Python 3.10\lib\site-packages\affine\__init__.py:629, in Affine.__mul__(self, other)
+    623 warnings.warn(
+    624     "Use `@` matmul instead of `*` mul operator for matrix multiplication",
+    625     PendingDeprecationWarning,
+    626     stacklevel=2,
+    627 )
+    628 if isinstance(other, Affine):
+--> 629     return self.__matmul__(other)
+    630 try:
+    631     _, _ = other
+
+File C:\Python 3.10\lib\site-packages\affine\__init__.py:555, in Affine.__matmul__(self, other)
+    540 def __matmul__(self, other):
+    541     """Matrix multiplication.
+    542 
+    543     Apply the transform using matrix multiplication, creating
+   (...)
+    553     Affine or a tuple of two or three items
+    554     """
+--> 555     sa, sb, sc, sd, se, sf = self[:6]
+    556     if isinstance(other, Affine):
+    557         oa, ob, oc, od, oe, of = other[:6]
+
+File C:\Python 3.10\lib\site-packages\affine\__init__.py:507, in Affine.__getitem__(self, index)
+    506 def __getitem__(self, index):
+--> 507     return self._astuple[index]
+
+File C:\Python 3.10\lib\functools.py:974, in cached_property.__get__(self, instance, owner)
+    969 except AttributeError:  # not all objects have __dict__ (e.g. class defines slots)
+    970     msg = (
+    971         f"No '__dict__' attribute on {type(instance).__name__!r} "
+    972         f"instance to cache {self.attrname!r} property."
+    973     )
+--> 974     raise TypeError(msg) from None
+    975 val = cache.get(self.attrname, _NOT_FOUND)
+    976 if val is _NOT_FOUND:
+
+TypeError: No '__dict__' attribute on 'Affine' instance to cache '_astuple' property.
