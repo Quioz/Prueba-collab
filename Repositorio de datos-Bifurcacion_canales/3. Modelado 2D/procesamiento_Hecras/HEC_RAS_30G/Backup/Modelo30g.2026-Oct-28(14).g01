@@ -1,0 +1,106 @@
+Geom Title=New_Geometry30
+Program Version=7.01
+Viewing Rectangle= 499962.898319687 , 500212.578065677 , 8882577.95762063 , 467572.680113303 
+
+Storage Area=AREA_2D (1)     ,,
+Storage Area Surface Line= 9 
+        499974.5       8499997.5                
+        499974.5       8500002.5                
+499999.866025404       8500002.5                
+ 500130.08682327 8500077.6830127                
+ 500131.586823278500075.08493649                
+500004.133974596       8500001.5                
+        500200.5       8500001.5                
+        500200.5       8499997.5                
+        499974.5       8499997.5                
+Storage Area Type= 1 
+Storage Area Area=
+Storage Area Min Elev=
+Storage Area Is2D=-1
+Storage Area Point Generation Data=,,,
+Storage Area 2D Points= 0 
+Storage Area 2D PointsPerimeterTime=28Oct2026 17:51:43
+Storage Area Mannings=0
+2D Cell Volume Filter Tolerance=0.003
+2D Cell Minimum Area Fraction=0.01
+2D Face Profile Filter Tolerance=0.003
+2D Face Area Elevation Profile Filter Tolerance=0.003
+2D Face Area Elevation Conveyance Ratio=0.02
+2D Face Min Length Ratio=0.05
+2D Face Area Laminar Depth=0.06
+2D Multiple Face Mann n=-1
+2D Composite LC=0
+
+BreakLine Name=Breakline 1
+BreakLine CellSize Min=
+BreakLine CellSize Max=
+BreakLine Near Repeats=0
+BreakLine Protection Radius=0
+BreakLine Polyline= 3 
+500130.9038105688500075.26794919500002.267949192        8500001.
+         500200.        8500001.
+BreakLine Name=Breakline 2
+BreakLine CellSize Min=
+BreakLine CellSize Max=
+BreakLine Near Repeats=0
+BreakLine Protection Radius=0
+BreakLine Polyline= 3 
+         499975.        8500002.         500000.        8500002.
+500129.903810568        8500077.
+BreakLine Name=Breakline 3
+BreakLine CellSize Min=
+BreakLine CellSize Max=
+BreakLine Near Repeats=0
+BreakLine Protection Radius=0
+BreakLine Polyline= 2 
+         499975.        8499998.         500200.        8499998.
+BC Line Name=BC_SALIDA_R2                    
+BC Line Storage Area=AREA_2D (1)     
+BC Line Start Position= 500131.073031943 , 8500073.9480663 
+BC Line Middle Position= 500129.973732876 , 8500075.83290012 
+BC Line End Position= 500128.87443381 , 8500077.71773393 
+BC Line Arc= 2 
+500131.073031943 8500073.9480663 500128.874433818500077.71773393
+BC Line Text Position= 1.79769313486232E+308 , 1.79769313486232E+308 
+BC Line Name=BC_SALIDA_R1                    
+BC Line Storage Area=AREA_2D (1)     
+BC Line Start Position= 500196.643059488 , 8500002.30102011 
+BC Line Middle Position= 500196.643059488 , 8499999.51194041 
+BC Line End Position= 500196.643059488 , 8499996.72286071 
+BC Line Arc= 2 
+500196.6430594888500002.30102011500196.6430594888499996.72286071
+BC Line Text Position= 1.79769313486232E+308 , 1.79769313486232E+308 
+BC Line Name=BC_ENTRADA                      
+BC Line Storage Area=AREA_2D (1)     
+BC Line Start Position= 499976.641993506 , 8500002.56961938 
+BC Line Middle Position= 499976.650491987 , 8499999.95772875 
+BC Line End Position= 499976.658990468 , 8499997.34583813 
+BC Line Arc= 2 
+499976.6419935068500002.56961938499976.6589904688499997.34583813
+BC Line Text Position= 1.79769313486232E+308 , 1.79769313486232E+308 
+LCMann Time=Dec/30/1899 00:00:00
+LCMann Region Time=Dec/30/1899 00:00:00
+LCMann Table=0
+LCMann Region Name=Manning's Region 1
+LCMann Region Table=0
+LCMann Region Polygon=8
+ 500130.08682327 8500077.6830127 500131.586823278500075.08493649
+500004.133974596       8500001.5        500200.5       8500001.5
+        500200.5       8499997.5500004.288675135       8499997.5
+500001.0179491928500003.16506351 500130.08682327 8500077.6830127
+LCMann Region Name=Manning's Region 2
+LCMann Region Table=0
+LCMann Region Polygon=9
+        499974.5       8499997.5        499974.5       8500002.5
+499999.866025404       8500002.5 500130.08682327 8500077.6830127
+ 500131.586823278500075.08493649500004.133974596       8500001.5
+        500200.5       8500001.5        500200.5       8499997.5
+        499974.5       8499997.5
+Chan Stop Cuts=-1 
+
+
+
+Use User Specified Reach Order=0
+GIS Ratio Cuts To Invert=-1
+GIS Limit At Bridges=0
+Composite Channel Slope=5

@@ -1,0 +1,35 @@
+% !TeX program = pdflatex
+% !TeX encoding = UTF-8
+% !TeX spellcheck = es_ES
+% (Sin bibtex/biber: la bibliografía es un entorno thebibliography en referencias/referencias.tex)
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{textcomp}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}\renewcommand{\refname}{Referencias}\renewcommand{\figurename}{Figura}}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{float}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage[round,authoryear]{natbib}
+\usepackage{water_like}              % estilo emulado de Water (MDPI), archivo water_like.sty
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\bibhang}{0.9cm}\setlength{\bibsep}{2pt}
+\renewcommand{\bibfont}{\small}
+\graphicspath{{figuras/}}
+\newcommand{\Qs}{\mathrm{m^3/s}}
+\newcommand{\pc}{\text{\thinspace\%}}  % porcentaje con espacio fino (evita "Incompatible glue units" con babel español)
+\newcommand{\repo}{\url{https://github.com/Quioz/Prueba-collab}}
+
+\begin{document}
+\input{secciones/00_portada_resumen}
+\input{secciones/01_introduccion}
+\input{secciones/02_marco_teorico}
+\input{secciones/03_metodologia}
+\input{secciones/04_resultados}
+\input{secciones/05_discusion}
+\input{secciones/06_conclusiones}
+\input{secciones/07_declaraciones}
+\input{referencias/referencias}
+\input{secciones/08_anexos}
+\end{document}

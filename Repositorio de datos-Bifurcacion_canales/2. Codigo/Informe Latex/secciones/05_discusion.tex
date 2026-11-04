@@ -1,0 +1,22 @@
+\section{Discusión}\label{sec:discusion}
+\subsection{Por qué la Formulación I no sirve como predictor aquí}
+La Formulación I no tiene condición aguas abajo ni fricción, así que su reparto es función exclusiva de $\alpha$, $\lambda$ y $\mu$. Lo que el cierre ideal exige para el ángulo y los anchos de este caso, y lo que el flujo con superficie libre y fricción puede dar, divergen a medida que $\alpha$ crece: para $90^\circ$ y $120^\circ$ pide niveles distintos entre ramales (0.24 y 0.49 m) que el 2D no desarrolla (menos de 0.01 m). Tampoco admite calibración con un parámetro razonable: para reproducir el reparto del 2D con el ancho $b_2$ se necesitaría $1.61$ m en $45^\circ$ y $0.64$ m en $60^\circ$, y en $90^\circ$ y $120^\circ$ no existe un ancho que lo logre. Es coherente con la teoría: el modelo de tapa rígida es una referencia analítica de $Fr\to0$, no un predictor para un canal con fricción y condiciones aguas abajo \citep{batchelor1967,milnethomson1962}.
+
+\subsection{Por qué la Formulación II acierta el reparto pero sobrestima el nivel}
+Cuando la configuración del 1D se iguala a la simulada, el error de reparto cae de hasta $35\pc$ a $\leq6.5\pc$. La mayor parte del sesgo con los datos nominales es, por tanto, una diferencia de configuración y no un defecto de la formulación: el 2D se corrió con otra rugosidad en el ramal 1, otro fondo en el ramal 2 en $120^\circ$ y calados de salida de calado normal. Esto invalida leer la Tabla~\ref{tab:reparto} (columna nominal) como medida del sesgo del modelo, y es el principal hallazgo metodológico: comparar sin reconstruir la configuración atribuiría al modelo un error de $+35\pc$ que casi desaparece al igualar las condiciones.
+
+El nivel en la unión queda sobrestimado de forma sistemática (0.095 a 0.128 m). Con el radio hidráulico aproximado por el calado, como en la ley de fricción de HEC-RAS 2D, el error cambia de signo y baja a $-0.053$ a $-0.018$ m. Esto es compatible con que el 1D con perímetro completo exagere la fricción de pared en ramales angostos, aunque con los datos disponibles no puede separarse de otras causas, como la onda difusiva o la pérdida local.
+
+\subsection{Sesgo frente a incertidumbre}
+Con las incertidumbres postuladas, $\sigma_\varphi\approx0.035$, que es 3 a 30 veces el sesgo de la II simulada (0.001 a 0.023). En términos prácticos, el 2D no tiene resolución para distinguir esta formulación 1D de otra con parámetros dentro de su rango plausible: la comparación no refuta el 1D, pero tampoco lo valida. La desviación de 0.04 m en los calados de control y de $10\pc$ en Manning son supuestos del grupo, sin datos observados que los respalden.
+
+\subsection{Limitaciones}
+\begin{enumerate}[label=\arabic*)]
+\item \textbf{Una sola malla.} Con una malla por ángulo no se evalúa independencia de malla; el requisito de tres mallas no se cumplió. El 2D es un contraste, no una verdad.
+\item \textbf{Onda difusiva.} La opción usada omite la aceleración convectiva, relevante en la esquina de una derivación. Las ecuaciones completas podrían cambiar el reparto, especialmente en $90^\circ$ y $120^\circ$; no se probaron.
+\item \textbf{Hidrograma y rásteres de máximos.} Los caudales se derivan de calados y velocidades máximos por celda en un evento no permanente, bajo un supuesto cuasipermanente no verificado con series temporales. Las salidas son de calado normal en vez de cota fija. El cierre de masa entre secciones del 2D fue de $-1.3$ a $+2.5\pc$, por lo que $Q_0$ efectivo difiere ligeramente de $12\,\Qs$.
+\item \textbf{Corridas no equivalentes.} Los cinco ángulos difieren en rugosidad, pendiente y calados de salida, y los pasos de tiempo son 10 s ($45^\circ$) y 2 s ($90^\circ$). Por eso el efecto del ángulo está confundido con esas diferencias y no se interpreta. La tendencia del 2D con $\theta$ no es monótona (0.407, 0.395, 0.361, 0.381, 0.311).
+\item \textbf{Generador corregido sin reejecutar.} Las corridas usaron la versión 1 del generador; la versión 2, que corrige ambos defectos y pasa las 12 verificaciones del generador en cada ángulo, no se ha simulado aún.
+\item \textbf{Sin datos observados.} No hay validación física. El benchmark de la red de ocho canales no se reproduce, y la hoja de balance de masa tiene dos anomalías (el 30° con error de $0.22\pc$ y la columna de porcentaje del $60^\circ$).
+\item \textbf{Criterios.} Los umbrales de 10\pc y 0.10 m son propuestos por el grupo y no una norma.
+\end{enumerate}

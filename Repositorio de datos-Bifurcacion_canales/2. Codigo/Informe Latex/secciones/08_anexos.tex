@@ -1,0 +1,49 @@
+\appendix
+\section{Declaración detallada sobre el uso de inteligencia artificial}\label{anx:ia}
+Se empleó un asistente de inteligencia artificial para (i) reorganizar y redactar el manuscrito, (ii) escribir y depurar el código Python de los cuadernos y de las figuras, (iii) auditar las hojas de resultados de HEC-RAS y los archivos del proyecto, y (iv) preparar el generador de geometría 2D. El asistente no ejecutó las simulaciones HEC-RAS ni obtuvo observaciones de campo. Las fuentes y las citas incluidas deben ser verificadas por el grupo contra la fuente original, en especial \citet{gumgum2025} y \citet{hsu2002}.
+
+\section{Estructura del repositorio y reproducción}
+\begin{itemize}
+\item \path{Art_MIH-626.tex}: archivo principal (compilar con pdflatex dos veces).
+\item \path{water_like.sty}: estilo emulado de Water; \path{secciones/}, \path{referencias/}, \path{figuras/}.
+\item \path{datos/}: \texttt{datos\_entrada.json}, \texttt{resultados\_fase4.csv}, \texttt{elasticidades\_fase4.csv}.
+\item \path{codigo/figuras_articulo.py}: regenera las figuras con \texttt{python codigo/figuras\_articulo.py}.
+\end{itemize}
+
+\section{Cumplimiento de los requisitos del trabajo}
+\begin{table}[H]
+\centering\small
+\caption{Estado de los requisitos del Trabajo 01.}\label{tab:req}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.40\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\toprule
+Requisito & Estado & Dónde / observación\\\midrule
+Sistema no lineal resuelto por Newton--Raphson & Cumplido & Secciones~\ref{sec:f1}--\ref{sec:f2}; \path{codigo/newton_bifurcacion.py}\\
+Tres pruebas de verificación & Cumplido, una no superada & Tabla~\ref{tab:verif}; el benchmark de Chaudhry no se reproduce\\
+Comparación con HEC-RAS 2D & Cumplido parcialmente & Sección~\ref{sec:resultados}; una malla por ángulo, onda difusiva\\
+Tres mallas y balance de masa & Balance sí; mallas no & Tabla~\ref{tab:masa}; sin independencia de malla\\
+Sensibilidad (al menos cinco parámetros) & Cumplido & 13 parámetros; Figura~\ref{fig:elast}, Monte Carlo con semilla fija\\
+Discusión de discrepancias & Cumplido & Sección~\ref{sec:discusion}\\
+Datos en archivo separado, versiones impresas, semilla fija & Cumplido & \path{datos/}; los \emph{scripts} imprimen versiones; semilla 20261103\\
+Al menos 15 referencias, 5 arbitradas, formato APA & Cumplido, por verificar & Referencias; verificar los datos de \citet{gumgum2025} y \citet{hsu2002}\\
+Declaración de uso de IA & Cumplido & Anexo~\ref{anx:ia}\\
+Repositorio & Por actualizar & \repo; subir esta carpeta y los anexos de HEC-RAS\\
+Informe de 15 a 25 páginas & Verificar & Depende de la compilación final con la plantilla\\\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Inventario de archivos de HEC-RAS entregados}
+\begin{itemize}
+\item \path{HEC_RAS_45G/}: \texttt{HEC\_RAS\_FSL.g01} (geometría, Manning base 0.018), \texttt{.p01} y \texttt{.p02} (planes), \texttt{.u01} (flujo no permanente) y \texttt{.p02.hdf} (resultados).
+\item \path{HEC_RAS_90G/}: \texttt{Modelo90g.g01}, \texttt{.p01}, \texttt{.u01} (hidrograma de 12 $\Qs$; pendientes de fricción 0.001 y 0.0008) y \texttt{.p01.hdf}.
+\item \texttt{Datos\_de\_Salida/}: CSV por ángulo y cuaderno de procesamiento \texttt{analisis\_hidraulico\_final.ipynb}, que lee los \emph{rásteres} de calado y velocidad máximos.
+\item \path{Balance de masa.xlsx}: balance de los cinco ángulos (con las anomalías descritas en la Sección~\ref{sec:resultados}).
+\end{itemize}
+El archivo \texttt{.u01} del $45^\circ$ contiene varias definiciones de flujo con pendientes de fricción distintas (por ejemplo 0.00131 y 0.00062); no se pudo establecer cuál usa el plan \texttt{.p02}, por lo que las pendientes de 0.0008 y 0.0010 se toman de la definición del $90^\circ$ y de la documentación de la corrida.
+
+\section{Pasos para reproducir los resultados}
+\begin{enumerate}
+\item Ejecutar \texttt{python codigo/newton\_bifurcacion.py}: imprime versiones, historial de Newton, $\varphi_{\mathrm{II}}$ y $\varphi_{\mathrm I}$.
+\item Ejecutar \texttt{python codigo/figuras\_articulo.py}: regenera las cinco figuras desde \path{datos/}.
+\item Compilar \path{Art_MIH-626.tex} con pdflatex dos veces (no se requiere bibtex ni biber).
+\item Los cuadernos de la Fase IV (sesgo y sensibilidad) y del generador 2D se conservan en el repositorio general del trabajo; sus salidas son la fuente de \path{datos/resultados_fase4.csv}.
+\end{enumerate}

@@ -1,0 +1,29 @@
+\thispagestyle{firstpage}
+\noindent\wlogo{figuras/logo_posgrado_recortado.png}\hfill{\footnotesize\color{wgrey}\begin{tabular}{r}Universidad Nacional de San Cristóbal de Huamanga\\Maestría en Hidráulica e Hidrología · Curso MIH-626\end{tabular}}\\[-2pt]
+{\color{wgrey}\rule{\textwidth}{0.5pt}}\\[8pt]
+\noindent{\large\bfseries Artículo}\\[10pt]
+{\raggedright\fontsize{17}{20}\selectfont\bfseries Reparto de caudal en una bifurcación de canales rectangulares: formulación de energía, solución por Newton--Raphson y contraste con HEC-RAS 2D en cinco ángulos\par}
+\vspace{10pt}
+\noindent{\bfseries Brigmar Prado Taquire, Giomar Rubenney Quispe Ozaita y Luis Jhonatan Zamora Guillen}\\[5pt]
+{\small Escuela de Posgrado, Universidad Nacional de San Cristóbal de Huamanga, Ayacucho, Perú (Grupo 7)\\
+Correspondencia: \href{mailto:giomar.quispe.16@unsch.edu.pe}{giomar.quispe.16@unsch.edu.pe}}
+\vspace{10pt}
+
+\noindent\begin{wmeta}
+\wsection{Datos del manuscrito}\\
+Curso: Flujo en superficie libre (MIH-626).\\
+Docente: MSc. Iván Arturo Ayala Bizarro.\\
+Trabajo 01, estructura n.º 8: confluencia o bifurcación de canales.\\
+Versión: borrador para revisión, noviembre de 2026.
+
+\wsection{Cita sugerida}\\
+Prado Taquire, B.; Quispe Ozaita, G.R.; Zamora Guillen, L.J. Reparto de caudal en una bifurcación de canales rectangulares. Trabajo 01, MIH-626, UNSCH, 2026.
+
+\wsection{Aviso}\\
+Documento académico con el aspecto de un artículo de Water; no ha sido publicado por MDPI.
+\end{wmeta}\hfill
+\begin{wabstract}
+\wsection{Resumen:} Se estudia el reparto de un caudal de $12\,\Qs$ entre dos ramales rectangulares (3 m y 2 m de ancho) de un canal principal de 4 m, para ángulos de bifurcación de $30^\circ$, $45^\circ$, $60^\circ$, $90^\circ$ y $120^\circ$. Se resuelven por Newton--Raphson dos formulaciones: (I) flujo plano ideal con tapa rígida, que fija el reparto solo con la geometría, y (II) balance de energía por ramal con nivel común en la unión, pérdida local y fricción de Manning. La Formulación II da $Q_2/Q_0=0.4216$ con los datos nominales; su sensibilidad se rige por los calados de salida (elasticidad $\approx\!\pm1.1$), los anchos ($\approx\!0.8$) y la rugosidad ($\approx\!0.5$), y la incertidumbre paramétrica resultante ($\sigma_\varphi\approx0.035$) es mayor que los sesgos observados. Los resultados se contrastan con simulaciones HEC-RAS 2D (onda difusiva, hidrograma triangular de $12\,\Qs$ de pico, una malla por ángulo). Con la configuración efectivamente simulada, la Formulación II reproduce $Q_2$ con error $\leq6.5\pc$ (calados de salida tomados del 2D) o $\leq8.5\pc$ (calado normal, 30°--90°), y el nivel en la unión se sobrestima entre 0.095 y 0.128 m; la Formulación I no es aceptable (error de $Q_2$ de $-0.1\pc$ a $+152\pc$). El efecto del ángulo no puede aislarse porque las corridas difieren en rugosidad, pendiente y paso de tiempo, y no se cumplió el requisito de tres mallas. Se documentan estas limitaciones y los datos y el código para reproducir los resultados.
+\wkeywords{bifurcación de canales; reparto de caudal; Newton--Raphson; energía específica; sensibilidad; HEC-RAS 2D; sesgo}
+\end{wabstract}
+\vspace{6pt}{\color{wgrey}\rule{\textwidth}{0.5pt}}

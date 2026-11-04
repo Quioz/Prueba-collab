@@ -1,0 +1,32 @@
+<VRTDataset rasterXSize="2280" rasterYSize="822">
+  <SRS dataAxisToSRSAxisMapping="1,2">PROJCS["WGS 84 / UTM zone 18S",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-75],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",10000000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32718"]]</SRS>
+  <GeoTransform>  4.9997350000000000e+05,  1.0000000000000001e-01,  0.0000000000000000e+00,  8.5000786999999993e+06,  0.0000000000000000e+00, -1.0000000000000001e-01</GeoTransform>
+  <VRTRasterBand dataType="Float32" band="1">
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.730470657349</MDI>
+      <MDI key="STATISTICS_MEAN">1.6754370424499</MDI>
+      <MDI key="STATISTICS_MINIMUM">0.35811901092529</MDI>
+      <MDI key="STATISTICS_STDDEV">0.54506974529905</MDI>
+    </Metadata>
+    <NoDataValue>-9999</NoDataValue>
+    <ColorInterp>Gray</ColorInterp>
+    <Histograms>
+      <HistItem>
+        <HistMin>0.358119010925293</HistMin>
+        <HistMax>10.7304706573486</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>11|143|332|376|496|512|551|480|537|566|495|639|2893|4832|3160|2043|2608|1423|1979|1568|926|1662|1576|1126|1545|762|1846|1240|523|1063|1657|1605|1220|1394|1666|2369|1413|2884|2196|2565|4060|11005|9963|941|1027|1550|1671|2123|2071|1917|4467|1581|314|83|31|9|10|4|9|6|2|4|2|5|1|1|4|3|2|0|3|1|2|1|0|0|2|0|0|1|0|1|2|1|0|2|0|0|0|0|1|0|0|0|0|1|1|1|0|0|0|0|0|0|1|1|0|0|0|0|2|0|2|1|0|0|1|1|0|0|0|0|1|0|0|0|1|0|0|0|1|0|1|0|1|0|0|0|0|0|1|0|1|0|0|2|0|0|2|1|0|2|0|0|0|0|0|1|0|0|0|1|1|1|0|0|0|0|0|0|0|0|1|0|0|1|0|0|0|1|0|0|0|0|0|0|0|0|1|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="1">Velocity (Max).Terrain.terreno_partidor30.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2280" RasterYSize="822" DataType="Float32" BlockXSize="256" BlockYSize="256" />
+      <SrcRect xOff="0" yOff="0" xSize="2280" ySize="822" />
+      <DstRect xOff="0" yOff="0" xSize="2280" ySize="822" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+</VRTDataset>

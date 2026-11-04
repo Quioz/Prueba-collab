@@ -1,0 +1,9 @@
+\section{Conclusiones}\label{sec:conclusiones}
+\begin{enumerate}[label=\arabic*)]
+\item La Formulación II (energía por ramal con nivel común) se resuelve de forma estable por Newton--Raphson con jacobiano analítico y da $Q_2/Q_0=0.4216$ con los datos nominales, independiente del ángulo por construcción.
+\item Con la configuración efectivamente simulada, reproduce el reparto del HEC-RAS 2D con error de $Q_2$ $\leq6.5\pc$ (calados de salida del 2D) o $\leq8.5\pc$ (calado normal, 30°--90°): aceptable con los criterios fijados. El nivel en la unión se sobrestima de $0.095$ a $0.128$ m (marginal en cuatro ángulos).
+\item La Formulación I (potencial ideal con tapa rígida) no es aceptable como predictor, salvo en $30^\circ$: su error crece hasta $+152\pc$ y no puede calibrarse con el ancho del ramal.
+\item El reparto es sensible sobre todo a los calados de control, los anchos y la rugosidad; la pérdida local $K$ tiene poco efecto ($|E|\approx0.03$) y queda mal identificada. La incertidumbre paramétrica ($\sigma_\varphi\approx0.035$) supera al sesgo en los cinco ángulos, así que la comparación no permite distinguir entre el 1D y un 1D con parámetros ajustados.
+\item Con los datos nominales, la discrepancia con el 2D (hasta $+35\pc$) se debe sobre todo a que la configuración simulada no es la nominal, no a un defecto del modelo.
+\item No se concluye nada sobre el efecto del ángulo, ni sobre independencia de malla, ni sobre validez física. Lo mínimo para cerrar el trabajo es repetir el 2D con la geometría corregida, con cota de salida fija, ecuaciones completas y tres mallas al menos para $45^\circ$ y $90^\circ$.
+\end{enumerate}
