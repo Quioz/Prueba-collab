@@ -1,0 +1,9 @@
+\section{Conclusiones}\label{sec:conclusiones}
+\begin{enumerate}[label=\arabic*)]
+\item La Formulación II (energía por ramal con nivel común) se resuelve de forma estable por Newton--Raphson con jacobiano analítico y da $Q_2/Q_0=0.4216$ con los datos nominales, independiente del ángulo por construcción y casi insensible a la pérdida local $K$.
+\item En el HEC-RAS 2D con SWE-EM y celda de 0.25 m, las cinco corridas cumplen el control de calidad (error de volumen $\leq0.009\pc$) y dan $\varphi=0.374$, $0.358$, $0.350$, $0.340$ y $0.313$ entre $30^\circ$ y $120^\circ$: el reparto decrece con el ángulo.
+\item La Formulación I queda contradicha a ángulos grandes: crece de $0.406$ a $0.785$ mientras el 2D decrece, en todos los conjuntos y mallas probados.
+\item La Formulación II no reproduce la tendencia con el ángulo y sobrestima $Q_2$ entre $+13$ y $+35\pc$ respecto del SWE-EM de 0.25 m; frente al conjunto exploratorio SWE-ELM de 0.125 m queda a $+2$ a $+3\pc$ entre $30^\circ$ y $60^\circ$ y a $+11$ y $+29\pc$ en $90^\circ$ y $120^\circ$.
+\item El 2D no es una referencia convergida: la resistencia efectiva cae al refinar ($n_\mathrm{eff}/n=0.93$, $0.86$, $0.72$), $\varphi$ a 30° pasa de $0.389$ a $0.343$ y la corrección lineal de $n$ no cumple $\pm0.01$ m. El refinamiento local del nudo sí está convergido.
+\item Lo que queda por hacer: repetir 45°, 60° y 90° con otras mallas, resolver la dependencia de la resistencia efectiva con la malla, y contrastar con datos físicos antes de recomendar una formulación 1D para el diseño.
+\end{enumerate}

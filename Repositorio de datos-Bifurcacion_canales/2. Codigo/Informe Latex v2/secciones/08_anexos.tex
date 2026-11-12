@@ -1,0 +1,48 @@
+\appendix
+\section{Declaración detallada sobre el uso de inteligencia artificial}\label{anx:ia}
+Se empleó un asistente de inteligencia artificial para (i) reorganizar y redactar el manuscrito, (ii) escribir y depurar el código Python de los cuadernos y de las figuras, (iii) analizar los archivos de resultados HDF de HEC-RAS (reparto, balance de volumen, resistencia efectiva) y (iv) preparar el generador de geometría 2D. El asistente no ejecutó las simulaciones HEC-RAS, que corrieron los integrantes, ni obtuvo observaciones de campo. Las fuentes y las citas incluidas deben ser verificadas por el grupo contra la fuente original, en especial \citet{gumgum2025} y \citet{hsu2002}.
+
+\section{Estructura del repositorio y reproducción}
+\begin{itemize}
+\item \path{Art_MIH-626.tex}: archivo principal (compilar con pdflatex dos veces).
+\item \path{water_like.sty}: estilo emulado de Water; \path{secciones/}, \path{referencias/}, \path{figuras/}.
+\item \path{datos/}: \texttt{datos\_entrada.json}, \texttt{resultados\_2d\_v3.csv}, \texttt{mallas\_EM.csv}, \texttt{mallas\_ELM.csv}, \texttt{elasticidades\_fase4.csv}.
+\item \path{codigo/figuras_final.py}: regenera las figuras de reparto y malla; \path{codigo/figuras_articulo.py}: figuras de sensibilidad.
+\end{itemize}
+
+\section{Cumplimiento de los requisitos del trabajo}
+\begin{table}[H]
+\centering\small
+\caption{Estado de los requisitos del Trabajo 01.}\label{tab:req}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.40\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\toprule
+Requisito & Estado & Dónde / observación\\\midrule
+Sistema no lineal resuelto por Newton--Raphson & Cumplido & Secciones~\ref{sec:f1}--\ref{sec:f2}; \path{codigo/newton_bifurcacion.py}\\
+Tres pruebas de verificación & Cumplido, una no superada & Tabla~\ref{tab:verif}; el benchmark de Chaudhry no se reproduce\\
+Comparación con HEC-RAS 2D & Cumplido & Tabla~\ref{tab:reparto}; cinco ángulos con SWE-EM y celda de 0.25 m\\
+Tres mallas y balance de masa & Balance sí; mallas parcial & Tablas~\ref{tab:cc} y~\ref{tab:mallas}; tres mallas solo en 30° y 120° (SWE-EM) y en los cinco ángulos (SWE-ELM, exploratorio)\\
+Sensibilidad (al menos cinco parámetros) & Cumplido & 13 parámetros; Figura~\ref{fig:elast}; barrido de $K$ y $n$ en la Tabla~\ref{tab:barrido}\\
+Discusión de discrepancias & Cumplido & Sección~\ref{sec:discusion}\\
+Datos en archivo separado, versiones impresas, semilla fija & Cumplido & \path{datos/}; los \emph{scripts} imprimen versiones; semilla 20261103\\
+Al menos 15 referencias, 5 arbitradas, formato APA & Cumplido, por verificar & Referencias; verificar los datos de \citet{gumgum2025} y \citet{hsu2002}\\
+Declaración de uso de IA & Cumplido & Anexo~\ref{anx:ia}\\
+Repositorio & Por actualizar & \repo; subir esta carpeta y los anexos de HEC-RAS\\
+Informe de 15 a 25 páginas & Verificar & Depende de la compilación final\\\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Inventario de archivos de HEC-RAS utilizados}
+\begin{itemize}
+\item Paquetes de geometría v3 por ángulo (\texttt{theta30}, \dots, \texttt{theta120}): terreno, área 2D, líneas de quiebre, líneas de borde, regiones de Manning, hidrograma de entrada y niveles de salida.
+\item Corridas SWE-EM: 30° y 120° con mallas de 0.50, 0.25 y 0.125 m y refinamientos del nudo; 45°, 60° y 90° con malla de 0.25 m.
+\item Ramales rectos aislados (ramal 1 y ramal 2) con mallas de 0.50, 0.25 y 0.125 m y los dos planes con $n$ corregido.
+\item Conjunto exploratorio SWE-ELM: resultados CSV por ángulo y malla (\path{ProcesamientoResultados/parac0.5}, \path{parac0.25}, \path{parac0.125}).
+\end{itemize}
+
+\section{Pasos para reproducir los resultados}
+\begin{enumerate}
+\item Ejecutar \texttt{python codigo/newton\_bifurcacion.py}: imprime versiones, historial de Newton, $\varphi_{\mathrm{II}}$ y $\varphi_{\mathrm I}$.
+\item Ejecutar \texttt{python codigo/figuras\_final.py} y \texttt{python codigo/figuras\_articulo.py}: regeneran las figuras desde \path{datos/}.
+\item Compilar \path{Art_MIH-626.tex} con pdflatex dos veces (no se requiere bibtex ni biber).
+\item Los cuadernos de la Fase IV (sesgo y sensibilidad) y del generador 2D se conservan en el repositorio general del trabajo; sus salidas son la fuente de \path{datos/resultados_fase4.csv}.
+\end{enumerate}

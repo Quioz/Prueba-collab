@@ -1,0 +1,22 @@
+\section{Discusión}\label{sec:discusion}
+\subsection{Por qué la Formulación I no sirve como predictor aquí}
+La Formulación I no tiene condición aguas abajo ni fricción, así que su reparto es función exclusiva del ángulo y de los anchos. En el 2D el reparto decrece con el ángulo en todos los conjuntos corridos (SWE-EM entre $0.374$ y $0.313$; SWE-ELM entre $0.411$ y $0.328$), mientras que la Formulación I crece hasta $0.785$. La contradicción no depende de la malla ni de las ecuaciones del 2D, porque la brecha a $120^\circ$ (más de $0.45$) supera con holgura la dispersión entre mallas ($\leq0.03$ en SWE-EM). Es coherente con la teoría: el modelo de tapa rígida es una referencia analítica de $Fr\to0$, no un predictor para un canal con fricción y condiciones aguas abajo \citep{batchelor1967,milnethomson1962}.
+
+\subsection{Qué reproduce y qué no reproduce la Formulación II}
+La Formulación II predice $\varphi=0.4216$ para cualquier ángulo. El 2D, en cambio, muestra un descenso monótono con $\theta$ (de $0.374$ a $0.313$ con SWE-EM), de modo que la formulación no captura la tendencia por construcción. Su nivel absoluto depende de qué 2D se tome como referencia: queda a $+13\pc$ (30°) hasta $+35\pc$ (120°) del SWE-EM de 0.25 m, y a $+2$ a $+3\pc$ del SWE-ELM de 0.125 m entre 30° y 60°. Esa diferencia entre referencias es del mismo orden que la brecha que se quiere explicar, por lo que no se puede afirmar con estos datos que la Formulación II acierte el nivel del reparto en ángulos pequeños.
+
+Los barridos de la Formulación II indican además que ni la pérdida local ni la resistencia efectiva cierran la brecha con el SWE-EM: $K$ de 0 a 2.4 mueve $\varphi$ solo $0.009$, y reducir $n$ (lo que hace el 2D al refinar) \emph{eleva} $\varphi$ en lugar de bajarlo. Lo que el 2D muestra en el nudo es una pérdida de carga hacia el ramal 2 que crece con el ángulo (unos $0.04$ m a $30^\circ$ y $0.22$ m a $120^\circ$), asociada a la separación del flujo en la esquina, y que un coeficiente $K$ aplicado a la altura de velocidad no representa. Se interpreta como una hipótesis: faltan simulaciones que aíslen el mecanismo.
+
+\subsection{Dependencia de malla y de ecuaciones del 2D}
+El SWE-EM reproduce el remanso 1D en ramales rectos y diagonales, pero su resistencia efectiva decae al refinar ($n_\mathrm{eff}/n$ de $0.93$ a $0.72$) y el reparto no converge. La corrección lineal de $n$ no cumple la tolerancia ($0.018$ y $0.041$ m de error de nivel), de modo que la dependencia de malla no se resolvió. Refinar solo el nudo no cambia el reparto, lo que ubica la sensibilidad en la fricción de los ramales y no en la resolución de la esquina. Con SWE-ELM el reparto varía menos con la malla, pero ese conjunto no pasó la verificación en ramales diagonales; que ambos conjuntos difieran en $0.04$ a $0.07$ a igual celda impide tomar cualquiera de ellos como verdad de referencia.
+
+\subsection{Limitaciones}
+\begin{enumerate}[label=\arabic*)]
+\item \textbf{Malla.} Con SWE-EM, $\varphi$ no converge al refinar; las corridas de los cinco ángulos se hicieron solo con celda de 0.25 m. Las mallas de 0.50 y 0.125 m existen en 30° y 120°.
+\item \textbf{Ecuaciones.} El conjunto SWE-ELM, con tres mallas y cinco ángulos, usa un paquete anterior, midió caudales en secciones transversales y no pasó la verificación en ramales diagonales; se presenta como exploratorio.
+\item \textbf{Resistencia.} La resistencia efectiva del 2D difiere de la nominal y depende de la malla; la corrección lineal de $n$ no cumple $\pm0.01$ m. Las estimaciones del balance de energía son aproximadas.
+\item \textbf{Sensibilidad.} Las elasticidades y la incertidumbre paramétrica ($\sigma_\varphi\approx0.035$) provienen de configuraciones del conjunto exploratorio inicial y de desviaciones postuladas por el grupo, sin datos observados.
+\item \textbf{Sin validación física.} No hay datos de laboratorio ni de campo. El benchmark de la red de ocho canales no se reproduce.
+\item \textbf{Alcance geométrico.} Un solo caso sintético; $K$ fijo y resultados válidos para $b_0=4$ m, $b_1=3$ m y $b_2=2$ m.
+\item \textbf{Criterios.} Los umbrales de $10\pc$ y $20\pc$ son propuestos por el grupo y no una norma.
+\end{enumerate}

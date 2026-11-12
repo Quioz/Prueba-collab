@@ -1,0 +1,29 @@
+\thispagestyle{firstpage}
+\noindent\wlogo{figuras/logo_posgrado_recortado.png}\hfill{\footnotesize\color{wgrey}\begin{tabular}{r}Universidad Nacional de San Cristóbal de Huamanga\\Maestría en Hidráulica e Hidrología · Curso MIH-626\end{tabular}}\\[-2pt]
+{\color{wgrey}\rule{\textwidth}{0.5pt}}\\[8pt]
+\noindent{\large\bfseries Artículo}\\[10pt]
+{\raggedright\fontsize{17}{20}\selectfont\bfseries Reparto de caudal en una bifurcación de canales rectangulares: formulación de energía, solución por Newton--Raphson y contraste con HEC-RAS 2D en cinco ángulos\par}
+\vspace{10pt}
+\noindent{\bfseries Brigmar Prado Taquire, Giomar Rubenney Quispe Ozaita y Luis Jhonatan Zamora Guillen}\\[5pt]
+{\small Escuela de Posgrado, Universidad Nacional de San Cristóbal de Huamanga, Ayacucho, Perú (Grupo 7)\\
+Correspondencia: \href{mailto:giomar.quispe.16@unsch.edu.pe}{giomar.quispe.16@unsch.edu.pe}}
+\vspace{10pt}
+
+\noindent\begin{wmeta}
+\wsection{Datos del manuscrito}\\
+Curso: Flujo en superficie libre (MIH-626).\\
+Docente: MSc. Iván Arturo Ayala Bizarro.\\
+Trabajo 01, estructura n.º 8: confluencia o bifurcación de canales.\\
+Versión: final para entrega, noviembre de 2026.
+
+\wsection{Cita sugerida}\\
+Prado Taquire, B.; Quispe Ozaita, G.R.; Zamora Guillen, L.J. Reparto de caudal en una bifurcación de canales rectangulares. Trabajo 01, MIH-626, UNSCH, 2026.
+
+\wsection{Aviso}\\
+Documento académico con el aspecto de un artículo de Water; no ha sido publicado por MDPI.
+\end{wmeta}\hfill
+\begin{wabstract}
+\wsection{Resumen:} Se estudia el reparto de un caudal de $12\,\Qs$ entre dos ramales rectangulares (3 m y 2 m de ancho) de un canal principal de 4 m, para ángulos de bifurcación de $30^\circ$, $45^\circ$, $60^\circ$, $90^\circ$ y $120^\circ$. Se resuelven por Newton--Raphson dos formulaciones unidimensionales: (I) flujo plano ideal con tapa rígida, que fija el reparto solo con la geometría, y (II) balance de energía por ramal con nivel común en la unión, pérdida local y fricción de Manning. La Formulación II da $Q_2/Q_0=0.4216$ con los datos nominales, independiente del ángulo, y es poco sensible a la pérdida local ($\varphi$ varía menos de $0.01$ al pasar $K$ de 0 a 2.4). Los resultados se contrastan con HEC-RAS 2D (ecuaciones SWE-EM, hidrograma de 0.5 a $12\,\Qs$ mantenido 7200 s, nivel fijo en las salidas, celda de 0.25 m) con balance de volumen $\leq0.009\pc$ en los cinco ángulos. El 2D da $\varphi=0.374$, $0.358$, $0.350$, $0.340$ y $0.313$: decrece con el ángulo, con una tendencia opuesta a la de la Formulación I (de $0.406$ a $0.785$) y sin la constancia de la II, que sobrestima $Q_2$ entre $+13$ y $+35\pc$. Ese 2D no es una referencia convergida: la fricción efectiva del modelo cae al refinar la malla ($n_\mathrm{eff}/n=0.93$, $0.86$ y $0.72$ para celdas de 0.50, 0.25 y 0.125 m en ramales rectos aislados) y $\varphi$ a 30° pasa de $0.389$ a $0.343$; una corrección lineal de $n$ no cumple la tolerancia de $\pm0.01$ m. Un conjunto exploratorio con SWE-ELM da $\varphi\approx0.41$ entre $30^\circ$ y $60^\circ$ y reduce la brecha con la II a $3\pc$, pero ese conjunto no pasó la verificación en ramales diagonales. La conclusión robusta es que la Formulación I queda contradicha a ángulos grandes y que ninguna formulación 1D reproduce la tendencia con $\theta$; el nivel exacto de $\varphi$ depende de la malla y de las ecuaciones del 2D. Se entregan datos y código para reproducir los resultados.
+\wkeywords{bifurcación de canales; reparto de caudal; Newton--Raphson; energía específica; sensibilidad; HEC-RAS 2D; dependencia de malla}
+\end{wabstract}
+\vspace{6pt}{\color{wgrey}\rule{\textwidth}{0.5pt}}
