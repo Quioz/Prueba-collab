@@ -6,9 +6,35 @@ Se empleó un asistente de inteligencia artificial para (i) reorganizar y redact
 \begin{itemize}
 \item \path{Art_MIH-626.tex}: archivo principal (compilar con pdflatex dos veces).
 \item \path{water_like.sty}: estilo emulado de Water; \path{secciones/}, \path{referencias/}, \path{figuras/}.
-\item \path{datos/}: \texttt{datos\_entrada.json}, \texttt{resultados\_2d\_v3.csv}, \texttt{mallas\_EM.csv}, \texttt{mallas\_ELM.csv}, \texttt{elasticidades\_fase4.csv}.
+\item \path{datos/}: \path{datos_entrada.json}, \path{resultados_2d_v3.csv}, \path{mallas_EM.csv}, \path{mallas_ELM.csv}, \path{elasticidades_fase4.csv}, \path{gci_calados_onda_difusiva.csv}.
 \item \path{codigo/figuras_final.py}: regenera las figuras de reparto y malla; \path{codigo/figuras_articulo.py}: figuras de sensibilidad.
 \end{itemize}
+
+\section{Convergencia de calados máximos con onda difusiva (estudio preliminar)}\label{anx:gci}
+Por sugerencia del docente se incluye el estudio de convergencia de malla que el grupo hizo con las ecuaciones de onda difusiva, anterior al paso a SWE-EM. La variable es el calado máximo en secciones de control de cada ramal, con celdas de 0.50, 0.25 y 0.125 m (razón de refinamiento 2) y el índice de convergencia de malla (GCI); la Tabla~\ref{tab:gci} resume los resultados. El umbral de 5\pc{} es una convención habitual del GCI y no un límite normativo.
+
+\begin{table}[H]
+\centering\small
+\caption{Calados máximos [m] y GCI con onda difusiva (celdas de 0.50, 0.25 y 0.125 m).}\label{tab:gci}
+\begin{tabular}{rcccccc}
+\toprule
+$\theta$ y ramal & $y$ (0.50) & $y$ (0.25) & $y$ (0.125) & $p$ & GCI 0.25 [\%] & GCI 0.125 [\%]\\\midrule
+30°, R1 & 1.413 & 1.350 & 1.325 & 1.33 & 3.84 & 1.55\\
+30°, R2 & 1.411 & 1.349 & 1.330 & 1.71 & 2.54 & 0.79\\
+45°, R1$^{a}$ & 1.520 & 1.319 & 1.328 & --- & --- & ---\\
+45°, R2$^{b}$ & 1.524 & 1.332 & 1.330 & --- & --- & ---\\
+60°, R1 & 1.498 & 1.343 & 1.325 & 3.11 & 1.90 & 0.22\\
+60°, R2 & 1.519 & 1.360 & 1.330 & 2.41 & 3.40 & 0.66\\
+90°, R1 & 1.402 & 1.264 & 1.232 & 2.11 & 4.12 & 0.98\\
+90°, R2 & 1.384 & 1.258 & 1.234 & 2.39 & 2.95 & 0.57\\\midrule
+120°, R1 & 1.403 & 1.330 & 1.283 & 0.64 & 12.40 & 8.28\\
+120°, R2 & 1.346 & 1.260 & 1.226 & 1.34 & 5.58 & 2.27\\\bottomrule
+\end{tabular}
+
+\smallskip\footnotesize $^{a}$ Convergencia no monótona (el calado sube al refinar): el GCI no es aplicable; la hoja del grupo informó $p=4.48$ tomando valores absolutos. $^{b}$ Diferencia de 2 mm entre las dos mallas finas: $p$ no es fiable (la hoja informó 6.58). Los valores de 120° se presentan aparte porque sus resultados no son consistentes con los demás.
+\end{table}
+
+Con celda de 0.25 m, el GCI de los calados es de a lo sumo 4.1\pc{} entre 30° y 90° en las secciones donde la convergencia es monótona, y la celda de 0.50 m queda descartada porque los calados difieren 14 a 20 cm de los de 0.25 m. A 120° el GCI supera el umbral (hasta 12.4\pc), lo que el grupo atribuyó a los giros cerrados del flujo y motivó el uso de SWE-EM. Estos resultados son con onda difusiva y de calados máximos: \textbf{no demuestran independencia de malla del reparto $\varphi$} con SWE-EM, que sí cambia con la celda (Tabla~\ref{tab:mallas}).
 
 \section{Cumplimiento de los requisitos del trabajo}
 \begin{table}[H]
@@ -20,7 +46,7 @@ Requisito & Estado & Dónde / observación\\\midrule
 Sistema no lineal resuelto por Newton--Raphson & Cumplido & Secciones~\ref{sec:f1}--\ref{sec:f2}; \path{codigo/newton_bifurcacion.py}\\
 Tres pruebas de verificación & Cumplido, una no superada & Tabla~\ref{tab:verif}; el benchmark de Chaudhry no se reproduce\\
 Comparación con HEC-RAS 2D & Cumplido & Tabla~\ref{tab:reparto}; cinco ángulos con SWE-EM y celda de 0.25 m\\
-Tres mallas y balance de masa & Balance sí; mallas parcial & Tablas~\ref{tab:cc} y~\ref{tab:mallas}; tres mallas solo en 30° y 120° (SWE-EM) y en los cinco ángulos (SWE-ELM, exploratorio)\\
+Tres mallas y balance de masa & Balance sí; mallas parcial & Tablas~\ref{tab:cc} y~\ref{tab:mallas}; tres mallas solo en 30° y 120° (SWE-EM) y en los cinco ángulos (SWE-ELM, exploratorio); GCI de calados con onda difusiva en el Anexo~\ref{anx:gci}\\
 Sensibilidad (al menos cinco parámetros) & Cumplido & 13 parámetros; Figura~\ref{fig:elast}; barrido de $K$ y $n$ en la Tabla~\ref{tab:barrido}\\
 Discusión de discrepancias & Cumplido & Sección~\ref{sec:discusion}\\
 Datos en archivo separado, versiones impresas, semilla fija & Cumplido & \path{datos/}; los \emph{scripts} imprimen versiones; semilla 20261103\\

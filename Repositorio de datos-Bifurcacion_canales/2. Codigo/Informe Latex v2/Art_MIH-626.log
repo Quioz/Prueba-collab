@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2025.7.13)  11 NOV 2026 18:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2025.7.13)  11 NOV 2026 20:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -655,7 +655,7 @@ Package hyperref Info: Link coloring OFF on input line 24.
 \openout3 = `Art_MIH-626.out'.
 
  (secciones/00_portada_resumen.tex
-<figuras/logo_posgrado_recortado.png, id=151, 1477.52pt x 484.81125pt>
+<figuras/logo_posgrado_recortado.png, id=155, 1477.52pt x 484.81125pt>
 File: figuras/logo_posgrado_recortado.png Graphic file (type png)
 <use figuras/logo_posgrado_recortado.png>
 Package pdftex.def Info: figuras/logo_posgrado_recortado.png  used on input lin
@@ -748,7 +748,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 10.42007pt on input line 3.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 3.
-<figuras/1.png, id=212, 1066.98625pt x 1211.52625pt>
+<figuras/1.png, id=216, 1066.98625pt x 1211.52625pt>
 File: figuras/1.png Graphic file (type png)
 <use figuras/1.png>
 Package pdftex.def Info: figuras/1.png  used on input line 15.
@@ -769,20 +769,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [4{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-<figuras/2.png, id=267, 1036.62282pt x 578.16pt>
+<figuras/2.png, id=271, 1036.62282pt x 578.16pt>
 File: figuras/2.png Graphic file (type png)
 <use figuras/2.png>
 Package pdftex.def Info: figuras/2.png  used on input line 24.
 (pdftex.def)             Requested size: 382.64284pt x 213.413pt.
  [5 <./figuras/2.png>])
 (secciones/04_resultados.tex [6]
-<figuras/3.png, id=296, 945.2916pt x 671.3883pt>
+<figuras/3.png, id=300, 945.2916pt x 671.3883pt>
 File: figuras/3.png Graphic file (type png)
 <use figuras/3.png>
 Package pdftex.def Info: figuras/3.png  used on input line 34.
 (pdftex.def)             Requested size: 429.29416pt x 304.89821pt.
  [7 <./figuras/3.png>]
-<figuras/fig_elasticidad.png, id=311, 375.804pt x 289.08pt>
+<figuras/fig_elasticidad.png, id=315, 375.804pt x 289.08pt>
 File: figuras/fig_elasticidad.png Graphic file (type png)
 <use figuras/fig_elasticidad.png>
 Package pdftex.def Info: figuras/fig_elasticidad.png  used on input line 59.
@@ -805,13 +805,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 64.
 
 [8 <./figuras/fig_elasticidad.png>]
-<figuras/fig_phi_theta.png, id=329, 419.166pt x 252.945pt>
+<figuras/fig_phi_theta.png, id=333, 419.166pt x 252.945pt>
 File: figuras/fig_phi_theta.png Graphic file (type png)
 <use figuras/fig_phi_theta.png>
 Package pdftex.def Info: figuras/fig_phi_theta.png  used on input line 147.
 (pdftex.def)             Requested size: 363.96695pt x 219.63966pt.
  [9]
-<figuras/fig_malla.png, id=343, 462.528pt x 216.81pt>
+<figuras/fig_malla.png, id=347, 462.528pt x 216.81pt>
 File: figuras/fig_malla.png Graphic file (type png)
 <use figuras/fig_malla.png>
 Package pdftex.def Info: figuras/fig_malla.png  used on input line 178.
@@ -819,15 +819,8 @@ Package pdftex.def Info: figuras/fig_malla.png  used on input line 178.
  [10 <./figuras/fig_phi_theta.png>])
 (secciones/05_discusion.tex [11 <./figuras/fig_malla.png>])
 (secciones/06_conclusiones.tex) (secciones/07_declaraciones.tex [12])
-(referencias/referencias.tex) (secciones/08_anexos.tex [13]
-Overfull \hbox (74.50888pt too wide) in paragraph at lines 9--10
-[]$\T1/cmtt/m/n/10 d a t o s/$\T1/ppl/m/n/10 : \T1/cmtt/m/n/10 datos_entrada.js
-on\T1/ppl/m/n/10 , \T1/cmtt/m/n/10 resultados_2d_v3.csv\T1/ppl/m/n/10 , \T1/cmt
-t/m/n/10 mallas_EM.csv\T1/ppl/m/n/10 , \T1/cmtt/m/n/10 mallas_ELM.csv\T1/ppl/m/
-n/10 , \T1/cmtt/m/n/10 elasticidades_fase4.csv\T1/ppl/m/n/10 . 
- []
+(referencias/referencias.tex) (secciones/08_anexos.tex [13] [14]) [15]
 
-) [14] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (Art_MIH-626.aux
 LaTeX Info: Redefining \. on input line 15.
@@ -843,13 +836,13 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.43996pt have occurred.
 
 Package rerunfilecheck Info: File `Art_MIH-626.out' has not changed.
-(rerunfilecheck)             Checksum: 933DA00052BCAF289B562896A160148A;8664.
+(rerunfilecheck)             Checksum: E85DBCDCA3A6503A3BE1FDC32E087AD3;9096.
  ) 
 Here is how much of TeX's memory you used:
- 18347 strings out of 474447
- 296383 string characters out of 5750210
+ 18353 strings out of 474447
+ 296245 string characters out of 5750210
  1963528 words of memory out of 5000000
- 40194 multiletter control sequences out of 15000+600000
+ 40197 multiletter control sequences out of 15000+600000
  623720 words of font info for 190 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,12n,79p,2057b,675s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -865,9 +858,9 @@ pazo/fplmri.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sftt08
  Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/palatino/uplri8a.pfb>
-Output written on Art_MIH-626.pdf (14 pages, 2670278 bytes).
+Output written on Art_MIH-626.pdf (15 pages, 2675755 bytes).
 PDF statistics:
- 526 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 500000)
- 30028 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 539 PDF objects out of 1000 (max. 8388607)
+ 114 named destinations out of 1000 (max. 500000)
+ 30036 words of extra memory for PDF output out of 35830 (max. 10000000)
 
